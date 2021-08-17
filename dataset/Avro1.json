@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "DENEME1",
+				"fileName": "DENEME2",
 				"folderPath": "AVRODENEME",
 				"container": "adftutorial"
 			}
