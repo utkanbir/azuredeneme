@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "test.xlsx.parquet",
+				"fileName": "test2.xlsx.parquet",
 				"folderPath": "outputtest",
 				"fileSystem": "tolgadeneme"
 			},
