@@ -9,7 +9,9 @@
 		"type": "Orc",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation"
+				"type": "AzureBlobFSLocation",
+				"folderPath": "outputtest",
+				"fileSystem": "tolgadeneme"
 			},
 			"enablePhysicalSchema": true
 		}
