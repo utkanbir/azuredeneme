@@ -1,5 +1,5 @@
 {
-	"name": "pipeline6",
+	"name": "testpl6",
 	"properties": {
 		"activities": [
 			{
@@ -15,8 +15,142 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"enableStaging": false
-				}
+					"source": {
+						"type": "ExcelSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "product_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "product_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "customer_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "customer_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "date",
+									"type": "String"
+								},
+								"sink": {
+									"name": "date",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "total_amount",
+									"type": "String"
+								},
+								"sink": {
+									"name": "total_amount",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "unit_price",
+									"type": "String"
+								},
+								"sink": {
+									"name": "unit_price",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "total_unit",
+									"type": "String"
+								},
+								"sink": {
+									"name": "total_unit",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "unit_base_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "unit_base_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "discount",
+									"type": "String"
+								},
+								"sink": {
+									"name": "discount",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "final_price",
+									"type": "String"
+								},
+								"sink": {
+									"name": "final_price",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Excel2",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Parquet2",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []
