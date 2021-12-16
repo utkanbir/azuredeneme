@@ -8,9 +8,6 @@
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},
-		"SqlServer1_connectionString": {
-			"value": ""
-		},
 		"containerUri": {
 			"value": ""
 		},
