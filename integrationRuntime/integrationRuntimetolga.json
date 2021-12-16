@@ -1,0 +1,6 @@
+{
+	"name": "integrationRuntimetolga",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
