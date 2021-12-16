@@ -34,7 +34,7 @@
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "id",
+									"name": "id1",
 									"type": "Int32",
 									"physicalType": "integer"
 								}
@@ -45,9 +45,9 @@
 									"type": "String"
 								},
 								"sink": {
-									"name": "fiyat",
-									"type": "Decimal",
-									"physicalType": "money"
+									"name": "ff",
+									"type": "String",
+									"physicalType": "character varying"
 								}
 							}
 						],
