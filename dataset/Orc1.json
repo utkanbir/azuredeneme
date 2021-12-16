@@ -1,0 +1,15 @@
+{
+	"name": "Orc1",
+	"properties": {
+		"annotations": [],
+		"type": "Orc",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "outputtest",
+				"fileSystem": "tolgadeneme"
+			},
+			"enablePhysicalSchema": true
+		}
+	}
+}
