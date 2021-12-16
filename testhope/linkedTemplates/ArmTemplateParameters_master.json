@@ -8,17 +8,8 @@
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},
-		"FileServer1_password": {
-			"value": ""
-		},
 		"SqlServer1_connectionString": {
 			"value": ""
-		},
-		"FileServer1_properties_typeProperties_host": {
-			"value": "c:\\tolga\\azurecsv"
-		},
-		"FileServer1_properties_typeProperties_userId": {
-			"value": "KSNET\\02485123"
 		},
 		"containerUri": {
 			"value": ""
