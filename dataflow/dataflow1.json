@@ -12,7 +12,15 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "denemeoutput1",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "Select1"
@@ -33,7 +41,7 @@
 					"name": "AlterRow1"
 				}
 			],
-			"script": "source(output(\n\t\tID as integer,\n\t\tFirstName as string,\n\t\tLastName as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tformat: 'parquet') ~> source1\nsource1 select(mapColumn(\n\t\tID,\n\t\tFirstName,\n\t\tSurname = LastName\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select1\nSelect1 filter(ID>0) ~> Filter1\nFilter1 derive(namesurname = FirstName+Surname) ~> namesurnametogether\nnamesurnametogether window(over(namesurname),\n\tasc(ID, true),\n\taaa = rank()) ~> Window1\nWindow1 aggregate(groupBy(namesurname),\n\tID = countDistinct(ID)) ~> Aggregate1\nAggregate1 alterRow(upsertIf(true())) ~> AlterRow1"
+			"script": "source(output(\n\t\tID as integer,\n\t\tFirstName as string,\n\t\tLastName as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tformat: 'parquet') ~> source1\nsource1 select(mapColumn(\n\t\tID,\n\t\tFirstName,\n\t\tSurname = LastName\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select1\nSelect1 filter(ID>0) ~> Filter1\nFilter1 derive(namesurname = FirstName+Surname) ~> namesurnametogether\nnamesurnametogether window(over(namesurname),\n\tasc(ID, true),\n\taaa = rank()) ~> Window1\nWindow1 aggregate(groupBy(namesurname),\n\tID = countDistinct(ID)) ~> Aggregate1\nAggregate1 alterRow(upsertIf(true())) ~> AlterRow1\nAlterRow1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tumask: 0022,\n\tpreCommands: [],\n\tpostCommands: [],\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
 		}
 	}
 }
