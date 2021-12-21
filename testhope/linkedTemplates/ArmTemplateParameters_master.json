@@ -8,11 +8,20 @@
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},
-		"PostgreSql1_connectionString": {
+		"AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
 		"AzurePostgreSql1_connectionString": {
 			"value": ""
+		},
+		"PostgreSql1_connectionString": {
+			"value": ""
+		},
+		"SqlServer1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://tolga123.dfs.core.windows.net"
 		},
 		"containerUri": {
 			"value": ""

@@ -11,13 +11,25 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
 		},
-		"PostgreSql1_connectionString": {
+		"AzureDataLakeStorage1_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'PostgreSql1'"
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
 		},
 		"AzurePostgreSql1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzurePostgreSql1'"
+		},
+		"PostgreSql1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'PostgreSql1'"
+		},
+		"SqlServer1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer1'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://tolga123.dfs.core.windows.net"
 		},
 		"containerUri": {
 			"type": "string",
@@ -49,11 +61,20 @@
 					"AzureBlobStorage1_connectionString": {
 						"value": "[parameters('AzureBlobStorage1_connectionString')]"
 					},
-					"PostgreSql1_connectionString": {
-						"value": "[parameters('PostgreSql1_connectionString')]"
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
 					},
 					"AzurePostgreSql1_connectionString": {
 						"value": "[parameters('AzurePostgreSql1_connectionString')]"
+					},
+					"PostgreSql1_connectionString": {
+						"value": "[parameters('PostgreSql1_connectionString')]"
+					},
+					"SqlServer1_connectionString": {
+						"value": "[parameters('SqlServer1_connectionString')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
 					}
 				}
 			},
