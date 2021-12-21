@@ -18,43 +18,15 @@
 		},
 		"schema": [
 			{
-				"name": "id",
+				"name": "ID",
+				"type": "INT32"
+			},
+			{
+				"name": "FirstName",
 				"type": "UTF8"
 			},
 			{
-				"name": "product_id",
-				"type": "UTF8"
-			},
-			{
-				"name": "customer_id",
-				"type": "UTF8"
-			},
-			{
-				"name": "date",
-				"type": "UTF8"
-			},
-			{
-				"name": "total_amount",
-				"type": "UTF8"
-			},
-			{
-				"name": "unit_price",
-				"type": "UTF8"
-			},
-			{
-				"name": "total_unit",
-				"type": "UTF8"
-			},
-			{
-				"name": "unit_base_id",
-				"type": "UTF8"
-			},
-			{
-				"name": "discount",
-				"type": "UTF8"
-			},
-			{
-				"name": "final_price",
+				"name": "LastName",
 				"type": "UTF8"
 			}
 		]
