@@ -14,7 +14,7 @@
 			],
 			"sinks": [],
 			"transformations": [],
-			"script": "source(output(\n\t\tid as string,\n\t\tproduct_id as string,\n\t\tcustomer_id as string,\n\t\tdate as string,\n\t\ttotal_amount as string,\n\t\tunit_price as string,\n\t\ttotal_unit as string,\n\t\tunit_base_id as string,\n\t\tdiscount as string,\n\t\tfinal_price as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tformat: 'parquet') ~> source1"
+			"script": "source(output(\n\t\tID as integer,\n\t\tFirstName as string,\n\t\tLastName as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tformat: 'parquet') ~> source1"
 		}
 	}
 }
