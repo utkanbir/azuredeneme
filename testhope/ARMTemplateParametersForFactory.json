@@ -11,6 +11,9 @@
 		"AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
 		"AzurePostgreSql1_connectionString": {
 			"value": ""
 		},
