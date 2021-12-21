@@ -1,0 +1,20 @@
+{
+	"name": "powerquery1",
+	"properties": {
+		"type": "WranglingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"name": "Parquet1",
+					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tformat: 'parquet') ~>  Parquet1",
+					"dataset": {
+						"referenceName": "Parquet1",
+						"type": "DatasetReference"
+					}
+				}
+			],
+			"script": "section Section1;\r\nshared Parquet1 = let\r\n  AdfDoc = AzureStorage.DataLakeContents(\"https://tolga123.dfs.core.windows.net/tolgadeneme/outputtest/dataflowdeneme\"),\r\n  Parquet = Parquet.Document(AdfDoc)\r\nin\r\n  Parquet;\r\nshared UserQuery = let\r\n  Source = Parquet1,\r\n  #\"Renamed columns\" = Table.RenameColumns(Source, {{\"LastName\", \"surname1\"}}),\r\n  #\"Added custom\" = Table.AddColumn(#\"Renamed columns\", \"namesurname\", each [FirstName] + [surname1]),\r\n  #\"Removed columns\" = Table.RemoveColumns(#\"Added custom\", {\"namesurname\"})\r\nin\r\n  #\"Removed columns\";\r\n",
+			"documentLocale": "en-us"
+		}
+	}
+}
